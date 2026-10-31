@@ -1,0 +1,233 @@
+/* ───────── Typography tokens ───────── */
+.hero-num{font-weight:900;font-size:360px;line-height:1;letter-spacing:-.04em;color:var(--accent);font-variant-numeric:tabular-nums}
+.hero-num small{font-size:160px;color:var(--fg);letter-spacing:-.02em}
+.cover-title{font-weight:900;font-size:112px;line-height:1.15;letter-spacing:-.02em}
+.display{font-weight:800;font-size:76px;line-height:1.3;letter-spacing:-.015em}
+.display-s{font-weight:800;font-size:60px;line-height:1.35;letter-spacing:-.01em}
+.display-xs{font-weight:800;font-size:48px;line-height:1.4;letter-spacing:-.01em}
+.h1{font-weight:700;font-size:56px;line-height:1.3;letter-spacing:-.01em}
+.h1-xl{font-weight:700;font-size:96px;line-height:1.15;letter-spacing:-.02em}
+.h2{font-weight:600;font-size:40px;line-height:1.4}
+.h3{font-weight:600;font-size:32px;line-height:1.4}
+.label{font-weight:500;font-size:24px;line-height:1.4;letter-spacing:.02em}
+.body{font-weight:400;font-size:30px;line-height:1.6}
+.body-s{font-weight:400;font-size:26px;line-height:1.6}
+.caption{font-weight:300;font-size:22px;line-height:1.5;color:var(--fg-dim)}
+.question{font-weight:200;font-size:72px;line-height:1.4;letter-spacing:-.01em}
+.question-s{font-weight:200;font-size:60px;line-height:1.4}
+.thin-mark{font-weight:100;font-size:24px;letter-spacing:.3em}
+.dim-text{color:var(--fg-dim)}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* key emphasis — weight OR color, never both */
+.key{font-weight:900}
+.key-c{color:var(--accent)}
+.key-u{position:relative;display:inline-block}
+.key-u::after{content:"";position:absolute;left:0;bottom:-6px;height:4px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease) .5s}
+.is-on .key-u::after,.slide.is-active .key-u.auto::after{transform:scaleX(1)}
+.c-space{color:var(--space)}.c-town{color:var(--town)}.c-kstory{color:var(--kstory)}.c-accent{color:var(--accent)}
+
+/* ───────── Layout helpers ───────── */
+.center{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}
+.center-l{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%)}
+.abs{position:absolute}
+.row{display:flex;gap:24px}
+.col{display:flex;flex-direction:column}
+.gap-s{gap:12px}.gap-m{gap:24px}.gap-l{gap:60px}
+.mt-s{margin-top:16px}.mt-m{margin-top:32px}.mt-l{margin-top:56px}
+.ta-c{text-align:center}
+
+/* ───────── Kicker ───────── */
+.kicker{font-weight:500;font-size:24px;letter-spacing:.02em;color:var(--accent);display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.kicker::before{content:"";width:24px;height:2px;background:var(--accent)}
+.kicker.kstory{color:var(--kstory)}.kicker.kstory::before{background:var(--kstory)}
+.kicker.town{color:var(--town)}.kicker.town::before{background:var(--town)}
+.kicker.space{color:var(--space)}.kicker.space::before{background:var(--space)}
+
+/* ───────── Chip ───────── */
+.chip{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 22px;border-radius:999px;
+  background:var(--glass-bg);border:1px solid var(--glass-br);backdrop-filter:blur(16px);
+  font-weight:500;font-size:24px;line-height:1.3;white-space:nowrap;
+}
+.chip.lg{font-size:32px;padding:14px 30px}
+.chip.xl{font-size:48px;padding:20px 44px;font-weight:600}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.chip.space .dot{background:var(--space)}.chip.town .dot{background:var(--town)}.chip.kstory .dot{background:var(--kstory)}
+.chip.accent{border-color:rgba(34,211,238,.5)}
+.chip.glow{animation:chipGlow .6s ease}
+@keyframes chipGlow{50%{box-shadow:0 0 0 1px var(--accent),0 0 32px rgba(34,211,238,.6)}}
+
+/* ───────── Card (glass) ───────── */
+.card{
+  position:relative;
+  padding:36px 40px;border-radius:24px;
+  background:var(--glass-bg);border:1px solid var(--glass-br);backdrop-filter:blur(16px);
+}
+.card .ic{width:48px;height:48px;stroke:#fff;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;margin-bottom:24px;opacity:.9}
+.card .n{font-weight:300;font-size:22px;color:var(--fg-dim);margin-bottom:12px;letter-spacing:.05em}
+.card .t{font-weight:600;font-size:36px;line-height:1.35}
+.card .d{font-weight:300;font-size:22px;line-height:1.5;color:var(--fg-dim);margin-top:14px}
+.card .topline{position:absolute;left:40px;top:0;width:48px;height:3px;background:var(--accent);border-radius:0 0 3px 3px}
+.card.space .topline{background:var(--space)}.card.town .topline{background:var(--town)}.card.kstory .topline{background:var(--kstory)}
+.cards{display:flex;gap:24px}
+.cards>.card{flex:1}
+
+/* clickable */
+.is-link{cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s ease,border-color .25s}
+.is-link:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.4);box-shadow:0 0 0 1px var(--lk,var(--accent)),0 0 32px color-mix(in srgb,var(--lk,var(--accent)) 45%,transparent)}
+.is-link.space{--lk:var(--space)}.is-link.town{--lk:var(--town)}.is-link.kstory{--lk:var(--kstory)}
+
+/* ───────── BI card ───────── */
+.bi-card{
+  width:420px;height:160px;padding:32px 36px;border-radius:24px;
+  background:var(--glass-bg);border:1px solid var(--glass-br);backdrop-filter:blur(16px);
+  display:flex;flex-direction:column;justify-content:center;gap:8px;
+}
+.bi-card .name{display:flex;align-items:center;gap:14px;font-weight:600;font-size:40px;line-height:1.2}
+.bi-card .name::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--lk,var(--accent));flex:none}
+.bi-card .sub{font-weight:300;font-size:22px;color:var(--fg-dim);padding-left:26px}
+.bi-row{display:flex;gap:60px;justify-content:center}
+
+/* ───────── Compare panel ───────── */
+.compare{display:grid;grid-template-columns:1fr 1px 1fr;gap:0 60px;align-items:start}
+.compare .vline{width:1px;height:100%;min-height:200px;background:rgba(255,255,255,.2)}
+.compare .lab{font-weight:500;font-size:24px;color:var(--fg-dim);letter-spacing:.02em;margin-bottom:16px}
+.compare .val{font-weight:600;font-size:40px;line-height:1.4}
+.compare .desc{font-weight:400;font-size:26px;line-height:1.6;color:var(--fg-dim);margin-top:16px}
+
+/* ───────── Flow arrow ───────── */
+.flow-arrow{width:48px;height:48px;stroke:rgba(255,255,255,.4);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none;align-self:center;transform-origin:left;transition:transform .4s var(--ease)}
+[data-step]:not(.is-on) .flow-arrow{transform:scaleX(0)}
+.flow{display:flex;align-items:stretch;gap:24px}
+.flow>.card{flex:1}
+
+/* chain bar */
+.chain{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.chain .arr{color:var(--fg-faint);font-weight:300;font-size:28px}
+
+/* ───────── Table ───────── */
+.table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.table th{font-weight:500;font-size:20px;color:var(--fg-dim);text-align:left;padding:0 16px 14px;letter-spacing:.02em;border-bottom:1px solid rgba(255,255,255,.15)}
+.table td{font-weight:400;font-size:26px;padding:0 16px;height:60px;border-bottom:1px solid rgba(255,255,255,.08);white-space:nowrap}
+.table th.r,.table td.r{text-align:right}
+.table tr.hl td{background:rgba(34,211,238,.12);font-weight:600;font-size:28px}
+.table tr.hl td:first-child{box-shadow:inset 4px 0 0 var(--accent)}
+.table tr.hl .pct{color:var(--accent)}
+.table td.pct{font-weight:600}
+.table td.muted{color:var(--fg-dim);font-weight:300}
+
+/* ───────── Donut ───────── */
+.donut{position:relative;width:420px;height:420px}
+.donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut circle{fill:none;stroke-width:56;stroke-linecap:butt}
+.donut .seg{stroke-dasharray:0 1000;transition:stroke-dasharray 1.2s var(--ease)}
+.donut .lbl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.donut .lbl b{font-weight:900;font-size:96px;letter-spacing:-.03em;color:var(--accent);line-height:1}
+.donut .lbl span{font-weight:500;font-size:24px}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-weight:300;font-size:20px;color:var(--fg-dim)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:middle}
+
+/* ───────── Timeline (slide 10) ───────── */
+.timeline{display:flex;gap:16px;align-items:stretch}
+.timeline .seg{position:relative;padding:28px 32px 28px;border-top:3px solid rgba(255,255,255,.25);}
+.timeline .seg.hot{border-top-color:var(--accent)}
+.timeline .seg .lab{font-weight:500;font-size:24px;color:var(--fg-dim);margin-bottom:14px}
+.timeline .seg .t{font-weight:600;font-size:34px;margin-bottom:12px}
+.timeline .seg ul{list-style:none;font-weight:300;font-size:24px;color:var(--fg-dim);line-height:1.6}
+.timeline .seg ul li::before{content:"· ";color:var(--accent)}
+
+/* ───────── Problem rows (slide 6) ───────── */
+.prob{display:flex;align-items:center;gap:32px;height:150px}
+.prob .num{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;font-weight:300;font-size:22px;flex:none}
+.prob .txt{flex:1}
+.prob .txt .m{font-weight:800;font-size:46px;line-height:1.3}
+.prob .txt .s{font-weight:300;font-size:22px;color:var(--fg-dim);margin-top:8px}
+.prob .chip{flex:none}
+
+/* ───────── Columns (slide 8) ───────── */
+.col3{display:flex;gap:60px}
+.col3 .colm{flex:1;padding:40px 40px 48px;border-radius:28px;border:1px solid transparent;display:flex;flex-direction:column;gap:20px}
+.col3 .colm .svc{font-weight:600;font-size:40px}
+.col3 .colm .m{font-weight:800;font-size:44px;line-height:1.35}
+.col3 .colm .d{font-weight:300;font-size:22px;line-height:1.6;color:var(--fg-dim);flex:1}
+.col3 .colm .verb{font-weight:500;font-size:24px;color:var(--fg-dim);letter-spacing:.05em}
+
+/* ───────── Mock panel (slide 13) ───────── */
+.mock{width:820px;height:560px;padding:32px 36px;border-radius:24px;background:rgba(10,12,20,.55);border:1px solid var(--glass-br);backdrop-filter:blur(16px);display:flex;flex-direction:column;gap:26px}
+.mock .mt{font-weight:500;font-size:20px;color:var(--fg-dim);letter-spacing:.05em}
+.mock .models{display:flex;gap:12px}
+.mock .models span{padding:8px 18px;border-radius:999px;border:1px solid var(--glass-br);font-weight:500;font-size:20px}
+.mock .models span.on{background:rgba(167,139,250,.2);border-color:var(--town)}
+.bars{display:flex;flex-direction:column;gap:12px}
+.bars .b{display:grid;grid-template-columns:120px 1fr 90px;align-items:center;gap:16px;font-weight:300;font-size:20px;color:var(--fg-dim)}
+.bars .b i{display:block;height:14px;border-radius:7px;background:rgba(255,255,255,.1);overflow:hidden}
+.bars .b i::after{content:"";display:block;height:100%;width:0;background:var(--town);transition:width 1.2s var(--ease) .3s}
+.slide.is-active .bars .b i::after{width:var(--w)}
+.bars .b em{font-style:normal;text-align:right;font-variant-numeric:tabular-nums}
+.gauge{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:end}
+.gauge .g{height:18px;border-radius:9px;background:rgba(255,255,255,.1);overflow:hidden}
+.gauge .g::after{content:"";display:block;height:100%;width:0;background:linear-gradient(90deg,var(--town),var(--accent));transition:width 1.4s var(--ease) .5s}
+.slide.is-active .gauge .g::after{width:62%}
+.gauge .gt{font-weight:600;font-size:28px;font-variant-numeric:tabular-nums}
+.gauge .gl{font-weight:300;font-size:20px;color:var(--fg-dim)}
+
+/* ───────── Waveform (slide 20) ───────── */
+.wave{display:flex;align-items:center;gap:6px;height:80px}
+.wave i{width:10px;border-radius:5px;background:var(--kstory);height:20%;animation:wave 1.6s ease-in-out infinite;animation-delay:calc(var(--i)*-.09s)}
+@keyframes wave{0%,100%{height:18%}50%{height:var(--h,70%)}}
+
+/* ───────── Steps list (slide 20/23) ───────── */
+.steps{display:flex;flex-direction:column;gap:22px}
+.steps .st{display:flex;gap:20px;align-items:flex-start}
+.steps .st .k{width:44px;height:44px;border-radius:50%;background:var(--glass-bg);border:1px solid var(--glass-br);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:20px;flex:none}
+.steps .st b{display:block;font-weight:600;font-size:30px;line-height:1.3}
+.steps .st span{display:block;font-weight:300;font-size:22px;color:var(--fg-dim);margin-top:4px}
+
+/* ───────── Pipeline (slide 24) ───────── */
+.pipe{display:flex;align-items:center;gap:28px}
+.pipe .ins{display:flex;flex-direction:column;gap:16px}
+.pipe .stage{padding:22px 36px;border-radius:16px;border:1px solid var(--glass-br);background:var(--glass-bg);font-weight:600;font-size:30px}
+.pipe .line{width:80px;height:2px;background:var(--town);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.is-on .pipe .line{transform:scaleX(1)}
+.is-on .pipe .line:nth-of-type(2){transition-delay:.3s}
+
+/* ───────── Equation chips (slide 19) ───────── */
+.eq{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.eq .op{font-weight:300;font-size:36px;color:var(--fg-dim)}
+.eq .res{font-weight:600;font-size:36px;color:var(--kstory)}
+
+/* ───────── Before/After 슬라이더 (slide 19 · ppt_tstory slide-12 이식) ───────── */
+.ba{position:relative;border-radius:28px;overflow:hidden;background:#fff;user-select:none;touch-action:none;outline:none;--x:0%;box-shadow:0 24px 60px rgba(0,0,0,.45);cursor:ew-resize}
+.ba *{text-shadow:none}
+.ba .layer{position:absolute;inset:0}
+.ba .before{background:#FBF6E9;background-image:repeating-linear-gradient(0deg,transparent 0 38px,rgba(21,32,43,.05) 38px 39px)}
+.ba .after{background:#F3F7FB;clip-path:inset(0 0 0 var(--x,0%))}
+.ba .lbl{position:absolute;top:22px;padding:8px 16px;border-radius:999px;font-size:18px;font-weight:700;letter-spacing:.08em}
+.ba .before .lbl{left:24px;background:#FDE9C4;color:#9C6410}
+.ba .after .lbl{right:24px;background:#E3E6FF;color:#3A48D6}
+.ba .art{position:absolute;left:40px;right:40px;top:80px;bottom:140px;display:flex;align-items:center;justify-content:center}
+.ba .art svg{width:100%;height:100%}
+.ba .txt{position:absolute;right:40px;bottom:40px;max-width:360px;font-size:24px;line-height:1.5;font-weight:600}
+.ba .before .txt{left:40px;right:auto;color:#7B4F0A;transform:rotate(-2deg)}
+.ba .after .txt{color:#15202B;font-weight:700;font-size:26px;text-align:right}
+.ba .after .txt small{display:block;font-size:18px;color:#6C7A89;font-weight:500;margin-top:6px;letter-spacing:.04em}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--x,0%);width:0;z-index:3}
+.ba .handle::before{content:"";position:absolute;top:0;bottom:0;left:-2px;width:4px;background:#15202B}
+.ba .handle i{position:absolute;left:-28px;top:50%;margin-top:-28px;width:56px;height:56px;border-radius:50%;background:#15202B;color:#fff;display:grid;place-items:center;font-size:22px;font-style:normal;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+
+/* threshold line (slide 7) */
+.threshold{position:absolute;left:0;width:1680px;height:1px;background:rgba(255,255,255,.35);top:480px;transition:transform .8s var(--ease)}
+.threshold.down{transform:translateY(60px)}
+
+/* connectors (slide 4) */
+.connect{position:absolute;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s linear}
+.connect.on{transform:scaleX(1)}
+
+/* count-up */
+.count{display:inline-block}
+
+/* hint blink */
+.hint{animation:blink 3s ease-in-out infinite;color:var(--fg-dim)}
+@keyframes blink{0%,100%{opacity:.3}50%{opacity:1}}
