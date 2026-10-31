@@ -56,6 +56,8 @@ js/deck.js          상태·입력·전환·영상 관리 엔진
 assets/video/       배경 영상 (페이지 번호.mp4)
 assets/img/poster/  영상 첫 프레임 포스터(목차 썸네일·영상 로드 전 대체)
 assets/font/        Freesentation 9종 (FS-100 ~ FS-900)
+assets/og/          링크 공유 미리보기 이미지 1200×630 (Higgsfield 배경 + 문구 합성)
+assets/icon/        파비콘·앱 아이콘 (favicon.ico는 루트)
 docs/               PRD, UI 화면설계서, 개발일지, 평가보고서
 ```
 
