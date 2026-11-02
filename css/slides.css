@@ -235,8 +235,7 @@
 
 /* 27 */
 #s-27 .closer .kicker{justify-content:center;margin-bottom:40px}
-#s-27 .after{position:absolute;left:0;right:0;top:700px;text-align:center}
-#s-27 .after .h2{margin-top:20px;color:var(--accent)}
+#s-27 .closer{top:340px}
 
 /* 28 */
 #s-28 .kicker{position:absolute;top:80px}

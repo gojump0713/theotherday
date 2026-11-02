@@ -1,5 +1,6 @@
 /* 슬라이드 메타데이터 — 한 곳에서 관리
    id: 페이지 번호(해시·표시용), ch: 챕터 인덱스, bg: 배경 파일(assets/video|img), type: video|image|none
+   stepBg: {스텝: 배경} 스텝마다 배경 영상 교차 전환, autoTo: 자동 진행을 멈출 스텝,
    steps: 스텝 수, auto: 지정 시 진입 후 해당 ms 간격으로 스텝 자동 진행(클릭·키 입력으로 즉시 건너뜀), title: 목차 썸네일 문구, chapterStart: 챕터 첫 장 여부 */
 window.CHAPTERS = [
   '왜 틸론인가',
@@ -18,7 +19,7 @@ window.SLIDES = [
   { id:'03',  ch:0, bg:'03',   type:'video', steps:1, title:'축적한 기술을 새로운 방식으로 연결', overlay:'light' },
   { id:'04',  ch:0, bg:'04',   type:'video', steps:1, title:'기술을 결합하여 전달 방식을 넓히는 것' },
   { id:'05',  ch:1, bg:'05',   type:'video', steps:3, title:'서비스는 매일 증명하는 것', chapterStart:true },
-  { id:'06',  ch:1, bg:'06',   type:'video', steps:4, title:'네 가지 시작의 문제' },
+  { id:'06',  ch:1, bg:'06',   type:'video', steps:4, stepBg:{1:'06-1',2:'06-2',3:'06-3',4:'06-4'}, title:'네 가지 시작의 문제', overlay:'heavy' },
   { id:'07',  ch:1, bg:'07',   type:'video', steps:1, title:'시작의 문턱을 서비스로 낮추다' },
   { id:'08',  ch:1, bg:'08',   type:'video', steps:4, auto:1300, title:'세 서비스가 낮추는 문턱' },
   { id:'09',  ch:2, bg:'09',   type:'video', steps:0, title:'TheOther.Space 2.0', chapterStart:true, overlay:'light' },
@@ -43,8 +44,8 @@ window.SLIDES = [
   { id:'24',  ch:5, bg:'24',   type:'video', steps:1, title:'실습에서 개발·운영 전 과정으로' },
   { id:'25',  ch:5, bg:'25',   type:'video', steps:1, title:'동화책에 머물지 않겠습니다' },
   { id:'26',  ch:6, bg:'26',   type:'video', steps:2, title:'제주에는 바다가 하나 더', chapterStart:true, overlay:'light' },
-  { id:'27',  ch:6, bg:'27',   type:'video', steps:1, title:'어디에서든 낮출 수 있다' },
-  { id:'28',  ch:6, bg:'28',   type:'video', steps:2, title:'이 증명은 혼자 할 수 없습니다' },
+  { id:'27',  ch:6, bg:'27',   type:'video', steps:0, title:'어디에서든 낮출 수 있다' },
+  { id:'28',  ch:6, bg:'28',   type:'video', steps:2, auto:500, autoTo:1, title:'이 증명은 혼자 할 수 없습니다' },
   { id:'29',  ch:6, bg:'29',   type:'video', steps:1, title:'83.2% — 제주도민의 비중이기를' },
   { id:'30',  ch:6, bg:'30',   type:'video', steps:2, title:'증명된 기술을, 모두가 누리는 서비스로', overlay:'light' },
 ];

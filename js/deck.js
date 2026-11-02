@@ -51,12 +51,22 @@
       bg.dataset.fallback = FB[m.id] ? `assets/video/${FB[m.id]}.mp4` : '';
     }
     const ov = document.createElement('div'); ov.className = 'bg-overlay';
-    sl.prepend(ov); sl.prepend(bg);
+    sl.prepend(ov);
+    // 스텝별 배경(stepBg) — 기본 배경 위에 겹쳐 두고 해당 스텝에서 교차 전환
+    Object.entries(m.stepBg || {}).sort((a, b) => b[0] - a[0]).forEach(([k, name]) => {
+      const lay = document.createElement('div');
+      lay.className = 'bg bg-step'; lay.dataset.k = k;
+      const p = new Image(); p.className = 'poster'; p.alt = ''; p.src = `assets/img/poster/${name}.jpg`; p.onerror = () => p.remove();
+      lay.appendChild(p); lay.dataset.src = `assets/video/${name}.mp4`; lay.dataset.fallback = '';
+      sl.prepend(lay);
+    });
+    sl.prepend(bg);
   }
   S.forEach((_, i) => buildBg(i));
 
-  function mountVideo(i) {
-    const bg = $('.bg', slides[i]); if (!bg || !bg.dataset.src || $('video', bg)) return;
+  function mountVideo(i) { $$('.bg', slides[i]).forEach(bg => mountLayer(i, bg)); }
+  function mountLayer(i, bg) {
+    if (!bg || !bg.dataset.src || $('video', bg)) return;
     const v = document.createElement('video');
     v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'auto'; v.setAttribute('muted', '');
     let triedFallback = false;
@@ -72,14 +82,14 @@
     v.src = bg.dataset.src; bg.appendChild(v);
   }
   function unmountVideo(i) {
-    const v = $('.bg video', slides[i]); if (!v) return;
-    v.pause(); v.removeAttribute('src'); v.load(); v.remove();
+    $$('.bg video', slides[i]).forEach(v => { v.pause(); v.removeAttribute('src'); v.load(); v.remove(); });
   }
   function syncMedia() {
     const keep = new Set([state.index - 1, state.index, state.index + 1].filter(k => k >= 0 && k < N));
     for (let i = 0; i < N; i++) { keep.has(i) ? mountVideo(i) : unmountVideo(i); }
     for (let i = 0; i < N; i++) {
-      const v = $('.bg video', slides[i]); if (!v) continue;
+      $$('.bg-step video', slides[i]).forEach(v => { if (i !== state.index) v.pause(); });
+      const v = $('.bg:not(.bg-step) video', slides[i]); if (!v) continue;
       if (i === state.index) {
         if (!state.paused) { try { v.currentTime = 0; } catch (e) {} v.play().catch(() => {}); }
       } else { setTimeout(() => { if (i !== state.index) v.pause(); }, 500); }
@@ -101,8 +111,21 @@
     $$('[data-cls-at]', sl).forEach(el => {
       const [at, cls] = el.dataset.clsAt.split(':'); el.classList.toggle(cls, step >= +at);
     });
+    applyStepBg(i, step);
     const hook = window.HOOKS && window.HOOKS[S[i].id];
     if (hook && hook.onStep) hook.onStep(step, sl, backward);
+  }
+  function applyStepBg(i, step) {
+    const layers = $$('.bg-step', slides[i]); if (!layers.length) return;
+    const keys = layers.map(l => +l.dataset.k).filter(k => k <= step);
+    const act = keys.length ? Math.max(...keys) : -1;
+    layers.forEach(l => {
+      const on = +l.dataset.k === act, was = l.classList.contains('on');
+      l.classList.toggle('on', on);
+      const v = $('video', l); if (!v) return;
+      if (on && !was && i === state.index && !state.paused) { try { v.currentTime = 0; } catch (e) {} v.play().catch(() => {}); }
+      if (!on) setTimeout(() => { if (!l.classList.contains('on')) v.pause(); }, 900);
+    });
   }
 
   /* ───────── Chrome ───────── */
@@ -131,7 +154,7 @@
   function scheduleAuto() {
     cancelAuto();
     const m = S[state.index];
-    if (!m.auto || state.step >= m.steps) return;
+    if (!m.auto || state.step >= Math.min(m.steps, m.autoTo ?? m.steps)) return;
     autoT = setTimeout(() => {
       autoT = null;
       if (state.overlay !== 'none' || state.locked) { scheduleAuto(); return; }
@@ -283,7 +306,7 @@
       case '?': case '/': toggleOverlay('help'); break;
       case 'b': case 'B': toggleOverlay('black'); break;
       case 'r': case 'R': { const i = state.index; state.index = -1; go(i, 0, 'fade'); break; }
-      case 'p': case 'P': { state.paused = !state.paused; const v = $('.bg video', slides[state.index]); if (v) state.paused ? v.pause() : v.play().catch(() => {}); break; }
+      case 'p': case 'P': { state.paused = !state.paused; const sl = slides[state.index]; const v = $('.bg-step.on video', sl) || $('.bg:not(.bg-step) video', sl); if (v) state.paused ? v.pause() : v.play().catch(() => {}); break; }
       case 'Escape': if (document.fullscreenElement) document.exitFullscreen(); break;
     }
   });

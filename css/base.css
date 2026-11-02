@@ -70,6 +70,8 @@ b,strong{font-weight:inherit}
 .bg.kenburns .poster,.bg.kenburns img{animation:kenburns 20s ease-in-out infinite alternate}
 @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.06)}}
 
+.bg-step{opacity:0;transition:opacity .9s ease}
+.bg-step.on{opacity:1}
 .bg-overlay{position:absolute;inset:0;z-index:1;background:var(--overlay);pointer-events:none}
 .slide[data-overlay="heavy"] .bg-overlay{background:var(--overlay-heavy)}
 .slide[data-overlay="light"] .bg-overlay{background:var(--overlay-light)}

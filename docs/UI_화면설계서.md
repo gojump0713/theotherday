@@ -251,7 +251,7 @@
 │                                                                                              │
 │    ─ 서비스 01                                                                                 │ 킥커 y=440
 │    TheOther.Space 2.0                                                                        │ h1 → 96px 확대형, 서비스색 점
-│    DaaS + Dstation Xtak 엔진 · 클라우드 데스크톱 서비스                                            │ body --fg-dim
+│    DaaS + Dstation Xtack 엔진 · 클라우드 데스크톱 서비스                                            │ body --fg-dim
 │                                                                                              │
 │    한 줄 요약(label)                                                                           │
 └──────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -390,7 +390,7 @@
 
 ### 09 TheOther.Space 2.0 오프너
 - **템플릿** T5 / **배경** 09.mp4, `--overlay-light`, 챕터 칩 "TheOther.Space 2.0"
-- **요소**: 킥커 "서비스 01", `h1` 96 "TheOther.Space 2.0"(`--space` 점), `body` "기존 DaaS에 최신 Dstation Xtak 엔진을 더한 클라우드 데스크톱 서비스", `label` "필요한 업무용 컴퓨터 환경을, 클라우드에서"
+- **요소**: 킥커 "서비스 01", `h1` 96 "TheOther.Space 2.0"(`--space` 점), `body` "기존 DaaS에 최신 Dstation Xtack 엔진을 더한 클라우드 데스크톱 서비스", `label` "필요한 업무용 컴퓨터 환경을, 클라우드에서"
 - **스텝** 0
 
 ### 10 준비와 관리의 과정
