@@ -33,9 +33,9 @@
 <link rel="preload" href="assets/font/FS-500.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="assets/font/FS-700.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="assets/font/FS-800.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="css/base.css?v=20261102a">
-<link rel="stylesheet" href="css/components.css?v=20261102a">
-<link rel="stylesheet" href="css/slides.css?v=20261102a">
+<link rel="stylesheet" href="css/base.css?v=20261102b">
+<link rel="stylesheet" href="css/components.css?v=20261102b">
+<link rel="stylesheet" href="css/slides.css?v=20261102b">
 </head>
 <body>
 <div id="stage">
@@ -318,24 +318,36 @@
   </div>
 </section>
 
-<!-- ═══════════════ 14 iStation — 보안과 내부문서 ═══════════════ -->
+<!-- ═══════════════ 14 iStation — 같은 질문, 다른 답 (권한 기반 문서 활용) ═══════════════ -->
 <section class="slide">
   <div class="content">
-    <p class="kicker town" data-gone-at="1">iStation · 보안을 강화하면서 내부문서를 활용</p>
-    <h2 class="h1 h" data-gone-at="1">RBAC · ABAC 기반 문서 접근권한</h2>
-    <div class="trio" data-gone-at="1">
-      <span class="chip xl town"><i class="dot"></i>누가</span><span class="sep">·</span>
-      <span class="chip xl town"><i class="dot"></i>어떤 조건에서</span><span class="sep">·</span>
-      <span class="chip xl town"><i class="dot"></i>어떤 정보까지</span>
-    </div>
-    <div class="cmp" data-gone-at="1">
-      <div class="compare">
-        <div><p class="lab">사용자</p><p class="val">자신에게 허용된 정보를 활용합니다</p></div>
-        <i class="vline"></i>
-        <div><p class="lab">조직</p><p class="val">접근권한과 활용 범위를 통제합니다</p></div>
+    <p class="kicker town" data-gone-at="3">iStation · 보안을 강화하면서 내부문서를 활용</p>
+    <h2 class="h1 h" data-gone-at="3">같은 질문에도, <span class="key c-town">권한에 따라</span> AI가 쓰는 문서가 다릅니다</h2>
+    <div class="chats" data-gone-at="3">
+      <div class="chat ok">
+        <div class="who"><span class="av">김</span><div><b>인사팀 김○○</b><small>권한 · 인사 문서 열람</small></div><span class="badge"><svg class="ic"><use href="#i-unlock"/></svg>허용</span></div>
+        <p class="ask">올해 연봉 조정 기준 알려줘</p>
+        <div class="ans" data-step="1">
+          <span class="ai"><svg class="ic"><use href="#i-spark"/></svg>iStation</span>
+          <p>2026 보수규정을 기준으로 직급별 조정 기준과 성과 반영 방식을 정리해 드립니다.</p>
+          <span class="src"><svg class="ic"><use href="#i-doc"/></svg>출처 · 2026 보수규정.pdf</span>
+        </div>
+      </div>
+      <div class="chat no">
+        <div class="who"><span class="av">이</span><div><b>개발팀 이○○</b><small>권한 · 개발 문서 열람</small></div><span class="badge"><svg class="ic"><use href="#i-lock"/></svg>제한</span></div>
+        <p class="ask">올해 연봉 조정 기준 알려줘</p>
+        <div class="ans" data-step="1">
+          <span class="ai"><svg class="ic"><use href="#i-spark"/></svg>iStation</span>
+          <p>이 질문에 필요한 문서에 접근 권한이 없습니다.<br>인사팀 담당자에게 문의해 주세요.</p>
+          <span class="src"><svg class="ic"><use href="#i-lock"/></svg>접근 제한 · 인사 문서</span>
+        </div>
       </div>
     </div>
-    <div class="closer" data-step="1">
+    <div class="rule" data-step="2" data-gone-at="3">
+      <div class="trio"><span class="chip town"><i class="dot"></i>누가</span><span class="sep">·</span><span class="chip town"><i class="dot"></i>어떤 조건에서</span><span class="sep">·</span><span class="chip town"><i class="dot"></i>어떤 정보까지</span><span class="tag">RBAC · ABAC 기반 문서 접근권한</span></div>
+      <p class="body dim-text">사용자는 자신에게 허용된 정보를 활용하고, 조직은 접근권한과 활용 범위를 통제합니다.</p>
+    </div>
+    <div class="closer" data-step="3">
       <p class="display">AI의 <span class="key">비용과 관리</span>를 고민하는 시간을,<br>AI로 <span class="key key-c">성과를 만드는 시간</span>으로 바꾸는 것.</p>
       <p class="label c-town">TheOther.Town iStation이 제공하려는 가치는 바로 여기에 있습니다</p>
     </div>
@@ -688,6 +700,9 @@
   <symbol id="i-sun" viewBox="0 0 48 48"><circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2"/></symbol>
   <symbol id="i-heart" viewBox="0 0 48 48"><path d="M24 41S6 30 6 17a9 9 0 0 1 18-3 9 9 0 0 1 18 3c0 13-18 24-18 24z"/></symbol>
   <symbol id="i-library" viewBox="0 0 48 48"><path d="M6 18L24 7l18 11"/><path d="M9 18v22M39 18v22M6 40h36"/><path d="M16 22v18M24 22v18M32 22v18"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="21" rx="4"/><path d="M16 21v-6a8 8 0 0 1 16 0v6"/><path d="M24 30v5"/></symbol>
+  <symbol id="i-unlock" viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="21" rx="4"/><path d="M16 21v-6a8 8 0 0 1 15.5-2.8"/><path d="M24 30v5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 48 48"><path d="M12 6h16l10 10v26H12z"/><path d="M28 6v10h10M18 26h12M18 33h12"/></symbol>
   <symbol id="i-child" viewBox="0 0 48 48"><circle cx="24" cy="15" r="7"/><path d="M12 42v-6a12 12 0 0 1 24 0v6"/><path d="M18 9c2-3 10-3 12 0"/></symbol>
 </svg>
 
@@ -747,8 +762,8 @@
 
 </div>
 
-<script src="js/slides.js?v=20261102a"></script>
-<script src="js/hooks.js?v=20261102a"></script>
-<script src="js/deck.js?v=20261102a"></script>
+<script src="js/slides.js?v=20261102b"></script>
+<script src="js/hooks.js?v=20261102b"></script>
+<script src="js/deck.js?v=20261102b"></script>
 </body>
 </html>

@@ -130,12 +130,35 @@
 #s-13 .punch{position:absolute;left:0;top:690px;width:1680px}
 #s-13 .punch .caption{margin-top:20px}
 
-/* 14 */
-#s-14 .kicker{position:absolute;top:80px}
-#s-14 .h{position:absolute;top:140px}
-#s-14 .trio{position:absolute;left:0;right:0;top:330px;display:flex;justify-content:center;align-items:center;gap:28px}
-#s-14 .trio .sep{font-weight:200;font-size:48px;color:var(--fg-dim)}
-#s-14 .cmp{position:absolute;top:560px;width:1680px}
+/* 14 — 같은 질문, 다른 답 */
+#s-14 .kicker{position:absolute;top:40px}
+#s-14 .h{position:absolute;top:90px;width:1680px;font-size:52px}
+#s-14 .chats{position:absolute;top:220px;width:1680px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+#s-14 .chat{height:420px;padding:32px 36px;border-radius:24px;background:rgba(10,12,24,.55);border:1px solid var(--glass-br);backdrop-filter:blur(16px);display:flex;flex-direction:column;gap:22px}
+#s-14 .chat.ok{border-color:rgba(52,211,153,.35)}
+#s-14 .chat.no{border-color:rgba(255,92,92,.35)}
+#s-14 .ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+#s-14 .who{display:flex;align-items:center;gap:16px}
+#s-14 .who .av{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(167,139,250,.22);color:var(--town);font-weight:700;font-size:24px}
+#s-14 .who b{display:block;font-weight:600;font-size:28px}
+#s-14 .who small{display:block;font-weight:300;font-size:20px;color:var(--fg-dim);margin-top:2px}
+#s-14 .badge{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;font-weight:600;font-size:20px}
+#s-14 .ok .badge{background:rgba(52,211,153,.16);color:#34D399}
+#s-14 .no .badge{background:rgba(255,92,92,.16);color:#FF5C5C}
+#s-14 .ask{align-self:flex-end;max-width:80%;padding:16px 24px;border-radius:20px 20px 6px 20px;background:rgba(255,255,255,.14);font-weight:500;font-size:28px}
+#s-14 .ans{align-self:flex-start;max-width:92%;padding:20px 24px;border-radius:20px 20px 20px 6px;background:rgba(167,139,250,.14);border:1px solid rgba(167,139,250,.3)}
+#s-14 .ans .ai{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:18px;color:var(--town);letter-spacing:.04em}
+#s-14 .ans p{margin-top:10px;font-weight:400;font-size:25px;line-height:1.5}
+#s-14 .ans .src{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:6px 14px;border-radius:10px;font-weight:500;font-size:18px}
+#s-14 .ok .src{background:rgba(52,211,153,.14);color:#34D399}
+#s-14 .no .src{background:rgba(255,92,92,.14);color:#FF5C5C}
+#s-14 .no .ans{background:rgba(255,92,92,.08);border-color:rgba(255,92,92,.3)}
+#s-14 .rule{position:absolute;top:690px;width:1680px;text-align:center}
+#s-14 .rule .trio{display:flex;justify-content:center;align-items:center;gap:16px}
+#s-14 .rule .sep{font-weight:200;font-size:32px;color:var(--fg-dim)}
+#s-14 .rule .chip{font-size:28px;padding:12px 28px}
+#s-14 .rule .tag{margin-left:20px;font-weight:500;font-size:22px;color:var(--fg-dim);letter-spacing:.02em}
+#s-14 .rule .body{margin-top:22px;font-size:28px}
 
 /* 15-1 */
 #s-15-1 .kicker{position:absolute;top:80px}

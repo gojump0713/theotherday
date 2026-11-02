@@ -27,7 +27,7 @@ window.SLIDES = [
   { id:'11',  ch:2, bg:'11',   type:'video', steps:2, title:'PC를 준비하는 시간을 업무로' },
   { id:'12',  ch:3, bg:'12',   type:'video', steps:1, auto:1000, title:'TheOther.Town', chapterStart:true, overlay:'light' },
   { id:'13',  ch:3, bg:'13',   type:'video', steps:1, title:'iStation — 모델과 토큰 관리', overlay:'heavy' },
-  { id:'14',  ch:3, bg:'14',   type:'video', steps:1, title:'iStation — 보안과 내부문서' },
+  { id:'14',  ch:3, bg:'14',   type:'video', steps:3, auto:1300, autoTo:2, overlay:'heavy', title:'iStation — 보안과 내부문서' },
   { id:'15',  ch:3, bg:'15',   type:'video', steps:0, title:'Tstation', overlay:'light' },
   { id:'15-1',ch:3, bg:'15-1', type:'video', steps:1, title:'GPU · 개발공간 · 개발도구' },
   { id:'15-2',ch:3, bg:'15-2', type:'video', steps:0, title:'교수는 수업에 집중', overlay:'light' },
