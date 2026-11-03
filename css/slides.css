@@ -79,9 +79,9 @@
 #s-06 .probs{position:absolute;top:290px;width:1680px;display:flex;flex-direction:column}
 
 /* 07 */
-#s-07 .chips{position:absolute;left:0;right:0;top:330px;display:grid;grid-template-columns:auto auto;justify-content:center;gap:28px 40px;transition:all .7s var(--ease)}
+#s-07 .chips{position:absolute;left:0;right:0;top:420px;display:flex;flex-wrap:nowrap;justify-content:center;gap:24px;transition:all .7s var(--ease)}
 #s-07 .chips .chip{justify-self:center}
-#s-07 .chips.up{top:130px;transform:scale(.7);opacity:.55!important}
+#s-07 .chips.up{top:180px;transform:scale(.7);opacity:.55!important}
 #s-07 .threshold{top:580px}
 #s-07 .threshold.down{transform:translateY(120px)}
 #s-07 .punch{position:absolute;left:0;right:0;top:400px;text-align:center}
@@ -284,7 +284,7 @@
 .closer .display{font-size:64px}
 .punch-low.display-s{font-size:56px}
 #s-06 .prob .txt .m{font-size:40px}
-#s-07 .chip.lg{font-size:40px;padding:18px 44px}
+#s-07 .chip.lg{font-size:36px;padding:16px 34px;white-space:nowrap}
 #s-13 .left{width:820px}
 #s-13 .left .display-xs{font-size:44px}
 #s-23 .m{font-size:56px}
