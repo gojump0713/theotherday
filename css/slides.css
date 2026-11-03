@@ -259,6 +259,7 @@
 /* 27 */
 #s-27 .closer .kicker{justify-content:center;margin-bottom:40px}
 #s-27 .closer{top:340px}
+#s-27 .foot{position:absolute;left:0;right:0;top:820px;text-align:center;font-size:28px;line-height:1.6}
 
 /* 28 */
 #s-28 .kicker{position:absolute;top:80px}
