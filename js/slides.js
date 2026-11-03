@@ -23,7 +23,7 @@ window.SLIDES = [
   { id:'07',  ch:1, bg:'07',   type:'video', steps:1, title:'시작의 문턱을 서비스로 낮추다' },
   { id:'08',  ch:1, bg:'08',   type:'video', steps:4, auto:1300, autoTo:3, title:'세 서비스가 낮추는 문턱' },
   { id:'09',  ch:2, bg:'09',   type:'video', steps:0, title:'TheOther.Space 2.0', chapterStart:true, overlay:'light' },
-  { id:'10',  ch:2, bg:'10',   type:'video', steps:2, title:'준비와 관리의 과정을 바꾸다', overlay:'heavy' },
+  { id:'10',  ch:2, bg:'10',   type:'video', steps:2, stepBg:{1:'10-1'}, title:'준비와 관리의 과정을 바꾸다', overlay:'heavy' },
   { id:'11',  ch:2, bg:'11',   type:'video', steps:2, title:'PC를 준비하는 시간을 업무로' },
   { id:'12',  ch:3, bg:'12',   type:'video', steps:1, auto:1000, title:'TheOther.Town', chapterStart:true, overlay:'light' },
   { id:'13',  ch:3, bg:'13',   type:'video', steps:1, title:'iStation — 모델과 토큰 관리', overlay:'heavy' },
