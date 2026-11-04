@@ -44,7 +44,7 @@ window.SLIDES = [
   { id:'24',  ch:5, bg:'24',   type:'video', steps:1, title:'실습에서 개발·운영 전 과정으로' },
   { id:'25',  ch:5, bg:'25',   type:'video', steps:1, title:'동화책에 머물지 않겠습니다' },
   { id:'26',  ch:6, bg:'26',   type:'video', steps:2, title:'제주에는 바다가 하나 더', chapterStart:true, overlay:'light' },
-  { id:'27',  ch:6, bg:'27',   type:'video', steps:0, title:'어디에서든 낮출 수 있다' },
+  { id:'27',  ch:6, bg:'27',   type:'video', steps:0, title:'어디에서든 통할 수 있다' },
   { id:'28',  ch:6, bg:'28',   type:'video', steps:2, auto:500, autoTo:1, title:'이 증명은 혼자 할 수 없습니다' },
   { id:'29',  ch:6, bg:'29',   type:'video', steps:1, title:'83.2% — 제주도민의 비중이기를' },
   { id:'30',  ch:6, bg:'30',   type:'video', steps:2, title:'증명된 기술을, 모두가 누리는 서비스로', overlay:'light' },
