@@ -22,6 +22,7 @@
 /* key emphasis — weight OR color, never both */
 .key{font-weight:900}
 .key-c{color:var(--accent)}
+.key-y{color:var(--yellow)}
 .key-u{position:relative;display:inline-block}
 .key-u::after{content:"";position:absolute;left:0;bottom:-6px;height:4px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease) .5s}
 .is-on .key-u::after,.slide.is-active .key-u.auto::after{transform:scaleX(1)}

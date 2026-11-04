@@ -20,11 +20,12 @@
   --space:#4F8DFF;
   --town:#A78BFA;
   --kstory:#FBBF77;
+  --yellow:#FFD83D;
   --glass-bg:rgba(255,255,255,.06);
   --glass-br:rgba(255,255,255,.14);
-  --overlay:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.75));
-  --overlay-heavy:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.85));
-  --overlay-light:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.45));
+  --overlay:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.55));
+  --overlay-heavy:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.65));
+  --overlay-light:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.3));
   --ease:cubic-bezier(.2,.7,.2,1);
   --t-step:600ms;
   --t-slide:650ms;
