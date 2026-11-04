@@ -20,7 +20,7 @@ window.SLIDES = [
   { id:'04',  ch:0, bg:'04',   type:'video', steps:1, title:'기술을 결합하여 전달 방식을 넓히는 것' },
   { id:'05',  ch:1, bg:'05',   type:'video', steps:3, title:'서비스는 매일 증명하는 것', chapterStart:true },
   { id:'06',  ch:1, bg:'06',   type:'video', steps:4, stepBg:{1:'06-1',2:'06-2',3:'06-3',4:'06-4'}, title:'네 가지 시작의 문제', overlay:'heavy' },
-  { id:'07',  ch:1, bg:'07',   type:'video', steps:1, title:'시작의 문턱을 서비스로 낮추다' },
+  { id:'07',  ch:1, bg:'07',   type:'video', steps:1, title:'시작의 문턱을 서비스로 낮추다', overlay:'light' },
   { id:'08',  ch:1, bg:'08',   type:'video', steps:4, auto:1300, autoTo:3, title:'세 서비스가 낮추는 문턱' },
   { id:'09',  ch:2, bg:'09',   type:'video', steps:0, title:'TheOther.Space 2.0', chapterStart:true, overlay:'light' },
   { id:'10',  ch:2, bg:'10',   type:'video', steps:2, stepBg:{1:'10-1'}, title:'준비와 관리의 과정을 바꾸다', overlay:'heavy' },
