@@ -243,6 +243,11 @@
 #s-24 .pipe{position:absolute;top:500px;left:0}
 
 /* 25 */
+#s-25 .m{position:absolute;top:200px;width:1680px}
+#s-25 .exp{position:absolute;top:460px;display:flex;align-items:center;gap:20px}
+#s-25 .exp .arr{font-weight:200;font-size:40px;color:var(--fg-dim);margin:0 12px}
+#s-25 .p2{position:absolute;left:0;right:0;top:300px;text-align:center}
+#s-25 .p2 .caption{margin-top:32px}
 
 /* 26 */
 #s-26 .kicker{position:absolute;top:80px}
@@ -285,6 +290,7 @@
 #s-13 .left{width:820px}
 #s-13 .left .display-xs{font-size:44px}
 #s-23 .m{font-size:56px}
+#s-25 .p2 .display-s{font-size:54px}
 #s-28 .lead{position:absolute;top:552px}
 #s-28 .punch-low{top:612px}
 #s-29 .r1{font-size:44px;line-height:1.4;top:280px}
