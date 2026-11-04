@@ -121,6 +121,7 @@
 .closer .label{margin-top:48px}
 
 #s-11 .closer .display{font-size:76px}
+#s-14 .closer .display,#s-15-4 .closer .display,#s-21 .closer .display{font-size:76px}
 
 /* 13 */
 #s-13 .left{position:absolute;left:0;top:120px;width:800px}

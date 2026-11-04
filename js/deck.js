@@ -10,6 +10,7 @@
   const stage = $('#stage');
   const slides = $$('.slide', stage);
   const N = S.length;
+  const PAGES = Math.max(...S.map(m => parseInt(m.id, 10))); // 표시용 전체 페이지 수 (하위 슬라이드 제외)
   if (slides.length !== N) console.warn('[deck] slide count mismatch', slides.length, N);
 
   const state = { index: 0, step: 0, locked: false, overlay: 'none', paused: false };
@@ -135,7 +136,7 @@
   S.forEach((m, i) => { if (m.chapterStart && i > 0) { const t = document.createElement('i'); t.style.left = (i / N * 100) + '%'; ticks.appendChild(t); } });
   function renderChrome() {
     const m = S[state.index];
-    pageNo.textContent = `${m.id} / ${N}`;
+    pageNo.textContent = `${m.id} / ${PAGES}`;
     dots.innerHTML = Array.from({ length: m.steps }, (_, k) => `<i class="${state.step > k ? 'on' : ''}"></i>`).join('');
     fill.style.width = ((state.index + 1) / N * 100) + '%';
     const hook = window.HOOKS && window.HOOKS[m.id];
